@@ -1,0 +1,18 @@
+<h1>Editing wiki post</h1>
+
+<%= form_with model: @wiki_post, local: true do |form| %>
+
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </div>
+  <div>
+    <%= form.submit "Edit" %>
+  </div>
+<% end %>
+<br>
+
+<div>
+  <%= link_to "Show this wiki post", @wiki_post %> |
+  <%= link_to "Back to wiki posts", wiki_posts_path %>
+</div>

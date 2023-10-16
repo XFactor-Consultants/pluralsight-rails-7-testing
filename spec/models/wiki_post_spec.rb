@@ -3,10 +3,8 @@ require 'rails_helper'
 RSpec.describe WikiPost, type: :model do 
 
     context 'scopes' do 
-       let!(:wiki_post1) { WikiPost.create!(title: 'Funny Frogs', description: 'Silly frogs from around the globe.',
-        author: 'Billy Bindler', created_at: Time.now) }
-        let!(:wiki_post2) { WikiPost.create!(title: 'Monkey Facts',
-        description: 'Everything you did and did not want to know about monkeys.', author: 'John Jiles', created_at: 1.day.ago) }
+       let!(:wiki_post1) { FactoryBot.create(:wiki_post, author: 'Billy Bindler') }
+        let!(:wiki_post2) { FactoryBot.create(:wiki_post, :old, author: 'John Jiles') }
         
     it '#contributors' do 
         contributors = ["Billy Bindler", "John Jiles"]
